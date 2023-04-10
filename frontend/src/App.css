@@ -1,0 +1,25 @@
+body a {
+  text-decoration: none;
+  color: white;
+}
+
+body a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.deposit {
+  background-color: #12cf83;
+}
+
+.withdraw {
+  background-color: #c95353;
+}
+
+.balance-positive {
+  color: #12cf83;
+}
+
+.balance-negative {
+  color: #c95353;
+}

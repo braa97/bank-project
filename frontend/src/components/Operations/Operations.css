@@ -1,0 +1,38 @@
+.operations {
+    width: 40%;
+    display: grid;
+    margin: 5% 5%;
+    grid-template-rows: repeat(1fr);
+    padding: 2%;
+    box-shadow: 0px 0px 10px #7b7a7a;
+    grid-gap: 20px;
+    border-radius: 8px;
+}
+
+.operation {
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    padding: 8px;
+    grid-gap: 10px;
+    box-shadow: 0px 1px 10px  #949494;
+    height: 5vh;
+    border-radius: 4px;
+    align-items: center;
+    font-size: 1.7rem;
+}
+
+.operation-button {
+    width: 20%;
+    height: 4.5vh;
+    margin: 2% 3%;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0px 1px 10px  #949494;
+    border: none;
+}
+
+.operation-button:hover {
+    border: 1px solid white;
+}
