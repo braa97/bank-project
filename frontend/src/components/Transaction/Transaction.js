@@ -2,19 +2,16 @@ import "./Transaction.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function Transaction({transaction, setBalance}) {
+function Transaction({transaction, updateBalance, getTransactions}) {
 
-  const updateBalance = async () => {
-    let response = await axios.get("http://localhost:4200/balance");
-    setBalance(response.data[0].total);
-  };
 
   const deleteTransaction = async () => {
     try {
-      let response = await axios.delete(`http://localhost:4200/deleteTransaction/${transaction._id}`)
+      let response = await axios.delete(`http://localhost:4200/transaction/${transaction._id}`)
       if (response.status === 204) {
         alert("Transaction deleted successfully.")
         updateBalance()
+        getTransactions()
       }
     }
     catch (error) {

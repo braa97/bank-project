@@ -3,16 +3,11 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function Operations({ setBalance }) {
+function Operations({ updateBalance }) {
   const [transactionAmount, setTransactionAmount] = useState("");
   const [transactionVendor, setTransactionVendor] = useState("");
   const [transactionCategory, setTransactionCategory] = useState("");
   const navigate = useNavigate()
-
-  const updateBalance = async () => {
-    let response = await axios.get("http://localhost:4200/balance");
-    setBalance(response.data[0].total);
-  };
 
   const createNewTransaction = async (operation) => {
     let amount = transactionAmount;
@@ -21,7 +16,7 @@ function Operations({ setBalance }) {
     }
     try {
       let transaction = await axios.post(
-        "http://localhost:4200/makeTransaction",
+        "http://localhost:4200/transaction",
         {
           amount: amount,
           vendor: transactionVendor,
@@ -44,7 +39,7 @@ function Operations({ setBalance }) {
   };
 
   return (
-    <div>
+    <div className="operations-container">
       <div className="operations">
         <h1>Insert Transactions</h1>
         <input

@@ -1,7 +1,14 @@
+.operations-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
 .operations {
     width: 40%;
     display: grid;
-    margin: 5% 5%;
+    margin: auto;
     grid-template-rows: repeat(1fr);
     padding: 2%;
     box-shadow: 0px 0px 10px #7b7a7a;
